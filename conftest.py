@@ -37,17 +37,20 @@ def login_new_user(get_browser, create_new_user_by_api):
     user_data = create_new_user_by_api
     email = user_data['email']
     password = user_data['password']
-    # Открываем окно веб-браузер
+    # Открываем окно веб-браузера
     driver = get_browser
     # открываем страницу авторизации
     login_page = LoginPage(driver)
+    
     login_page.open_login_page()
     # Вводим email и пароль
     login_page.enter_user_data(email, password)
     # кликаем кнопку "Войти"
     login_page.click_login_button()
     # ждем появления кнопки "Оформить заказ" на Главной странице
-    login_page.wait_for_load_element(MainPageLocators.ORDER_BUTTON)
+   
+    login_page.wait_for_order_button()
+    
     return driver
 
 

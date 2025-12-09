@@ -2,6 +2,7 @@ import allure
 
 from data import Urls
 from locators import LoginPageLocators
+from locators import MainPageLocators
 from pages.base_page import BasePage
 
 
@@ -42,3 +43,8 @@ class LoginPage(BasePage):
         self.scroll_to_element_by_locator(LoginPageLocators.LOGIN_BUTTON)
         # кликаем ссылку "Восстановить пароль"
         self.click_element_by_locator(LoginPageLocators.FORGOT_PAGE_LINK)
+
+    @allure.step('Ждем появления кнопки "Оформить заказ" на главной странице')
+    def wait_for_order_button(self):
+        """Ждет появления кнопки 'Оформить заказ' на главной странице после входа"""
+        self.wait_for_load_element(MainPageLocators.ORDER_BUTTON)
