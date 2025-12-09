@@ -8,14 +8,15 @@ class UserData:
     USER_PASSWORD = '123456'
 
 
-class Urls:
-    FORGOT_PASSWORD_PAGE_URL = 'https://stellarburgers.education-services.ru/forgot-password'
-    LOGIN_PAGE_URL = 'https://stellarburgers.education-services.ru/login'
-    RESET_PASSWORD_PAGE_URL = 'https://stellarburgers.education-services.ru/reset-password'
-    PROFILE_PAGE_URL = 'https://stellarburgers.education-services.ru/account/profile'
-    ORDER_HISTORY_URL = 'https://stellarburgers.education-services.ru/account/order-history'
-    MAIN_PAGE_URL = 'https://stellarburgers.education-services.ru'  # ГЛАВНАЯ СТРАНИЦА
-    FEED_PAGE_URL = 'https://stellarburgers.education-services.ru/feed'
+from urls import (
+    FORGOT_PASSWORD_PAGE_URL,
+    LOGIN_PAGE_URL,
+    RESET_PASSWORD_PAGE_URL,
+    PROFILE_PAGE_URL,
+    ORDER_HISTORY_URL,
+    MAIN_PAGE_URL,
+    FEED_PAGE_URL
+)
 
 class RESPONSE_KEYS:
 
