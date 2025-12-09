@@ -8,14 +8,8 @@ from pages.profile_page import ProfilePage
 
 class TestProfilePage:
 
-    @allure.step('Открываем Личный кабинет по ссылке на Главной странице')
-    def __open_profile_page(self, driver):
-        constructor_page = ConstructorPage(driver)
-        constructor_page.open_profile_page_by_link()
-
-
     @allure.title('Проверяем переход по клику на «Личный кабинет»')
-    @allure.description('')
+    @allure.description('Проверяем, что при клике на ссылку "Личный кабинет" происходит корректный переход на страницу профиля')
     def test_profile_link(self, get_browser, create_new_user_by_api, login_new_user):
         # регистрируем нового пользователя и открываем окно веб-браузер
         driver = login_new_user
@@ -28,7 +22,7 @@ class TestProfilePage:
 
 
     @allure.title('Проверяем переход в раздел «История заказов»')
-    @allure.description('')
+    @allure.description('Проверяем, что в личном кабинете доступен и работает переход в раздел истории заказов')
     def test_order_history_link(self, get_browser, create_new_user_by_api, login_new_user):
         # регистрируем нового пользователя и открываем окно веб-браузер
         driver = login_new_user
@@ -44,7 +38,7 @@ class TestProfilePage:
 
 
     @allure.title('Проверяем выход из аккаунта')
-    @allure.description('')
+    @allure.description('Проверяем, что кнопка "Выход" в личном кабинете корректно выполняет выход из системы')
     def test_exit_button(self, get_browser, create_new_user_by_api, login_new_user):
         # регистрируем нового пользователя и открываем окно веб-браузер
         driver = login_new_user
